@@ -1,0 +1,20 @@
+.nav-box {
+  width: 15%;
+  height: 100%;
+  display: inline-block;
+  background-color: grey;
+  /*margin: 5px;*/
+}
+
+.bio-box {
+  width: 75%;
+  height: 100%;
+  display: inline-block;
+  background-color: grey;
+  /*margin: 5px;*/
+}
+
+.main-box {
+  height: 70vmin;
+  width: 100%;
+}
