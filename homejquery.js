@@ -1,33 +1,83 @@
+sectionColours = {"Bio": "#D0CD94",
+             "Projects": "#B0413E",
+                "About": "#BAC7BE",
+               "Fourth": "#548687",
+              "Contact": "#FFCE79"}
+
 function displayNav(){
-  $("#nav-box").animate({width:'98%'})
-  $("#bio-box").animate({
-    width: "0",
-    opacity: 0,
+  expandNavSections('Bio')
+  expandNavSections('Projects')
+  expandNavSections('About')
+  expandNavSections('Fourth')
+  expandNavSections('Contact')
+  $(".header-box").html("Nav")
+  fixbottomborder()
+}
+
+function displaySection(box){
+  collapseSelection(box)
+  $(`#${box}`).animate({height:'100%'})
+  $(`#${box}`).css({
+     "border-bottom-right-radius" : "2vmin",
+     "border-bottom-left-radius" : "2vmin"
+  });
+  if (box === "About") {
+    $(`#header-box`).html(`${box} Me`)
+  } else {
+    $(`#header-box`).html(`${box}`)
+  }
+  removeHover(box)
+  // changeSectionClick(id)
+}
+
+function collapseSelection(box){
+  var boxes = ["Bio", "Projects", "About", "Fourth", "Contact"]
+  boxes.forEach(function(boxId){
+    if(boxId != box){
+      $(`#${boxId}`).animate({
+        opacity: 0,
+        height: 0,
+      })
+      $(`#${boxId}`).css({"border-top-width" : "0"})
+    }
+
+    fixbottomborder()
   })
-  displayNavOptions()
 }
 
-function displaySections(id){
-  $(`#${id}`)
+function fixbottomborder(){
+  var boxes = ["Bio", "Projects", "About", "Fourth"]
+  boxes.forEach(function(boxId){
+    $(`#${boxId}`).css({
+       "border-bottom-right-radius" : "0",
+       "border-bottom-left-radius" : "0"
+    });
+  })
 }
 
-function displayNavOptions() {
-  $("#nav-box").html(
-    `<div class='row navGrid'>
-      <div id='1' class='col-sm-6'>
-        <div class='navSelector'>HI</div>
-      </div>
-      <div id='2' class='col-sm-6'>
-        <div class='navSelector'>HI</div>
-      </div>
-      <div class="bottomSelector">
-        <div class='col-sm-6'>
-          <div id='3' class='navSelector'>HI</div>
-        </div>
-        <div id='4' class='col-sm-6 '>
-          <div class='navSelector'>HI</div>
-        </div>
-      </div>`
-  )
-  // $("#nav-box").css('padding', '10px')
+function expandNavSections(box){
+  $(`#${box}`).animate({
+    height: "20%",
+    opacity: 1,
+  })
+  $(`#${box}`).css({"border-top-width" : "0.6vmin"})
+  addHover(box)
+}
+
+function addHover(box){
+  $(`#${box}`).mouseover(function() {
+    $(this).css({"background-color": "white"});
+    $(`#${box}-text`).css({"color": `${sectionColours[box]}`})
+    $(`#${box}-text`).animate({
+      "opacity": 1
+    })
+  }).mouseleave(function() {
+     $(this).css({"background-color" : sectionColours[`${box}`]})
+     $(`#${box}-text`).css({"opacity": 0})
+   });
+}
+
+function removeHover(box){
+  $(`#${box}`).unbind('mouseover')
+  $(`#${box}`).css({"backgroundColor": `${sectionColours[box]}`})
 }

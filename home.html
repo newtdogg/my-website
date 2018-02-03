@@ -10,21 +10,62 @@
 <body>
 
   <div class="jumbotron">
-
+    <div class="row">
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-8">
+        <div class="title">
+          <h2>Ted Newton</h2>
+          <h4>web developer</h4>
+        </div>
+      </div>
+      <div class="col-sm-2">
+      </div>
+    </div>
   </div>
 
   <div class="main-page">
     <div class="row">
       <div class="col-sm-2">
       </div>
-      <div class="col-sm-8">
+      <div class="col-sm-5">
+        <div id="header-box" class="header-box">
+          Bio
+        </div>
+        <div id=nav-box class="nav-box" onclick="displayNav()">
+          V
+        </div>
         <div class="main-box">
-          <div id="bio-box" class="bio-box">
-            hi
+          <div id="Bio" class="bio-box" onclick="displaySection('Bio')">
+            <div id="Bio-text">
+              <h3>Bio</h3>
+            </div>
           </div>
-          <div id="nav-box" class="nav-box" onclick="displayNav()">
-            hi
+          <div id="Projects" class="projects-box" onclick="displaySection('Projects')">
+            <div id="Projects-text">
+              <h3>Projects</h3>
+            </div>
           </div>
+          <div id="About" class="aboutMe-box" onclick="displaySection('About')">
+            <div id="About-text">
+              <h3>About Me</h3>
+            </div>
+          </div>
+          <div id="Fourth" class="fourth-box" onclick="displaySection('Fourth')">
+            <div id="Fourth-text">
+              <h3>Fourth</h3>
+            </div>
+          </div>
+          <div id="Contact" class="contact-box" onclick="displaySection('Contact')">
+            <div id="Contact-text">
+              <h3>Contact</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pictures">
+
         </div>
       </div>
       <div class="col-sm-2">
