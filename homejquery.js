@@ -1,8 +1,19 @@
-sectionColours = {"Bio": "#D0CD94",
+sectionColours = {
+                  "Bio": "#D0CD94",
              "Projects": "#B0413E",
                 "About": "#BAC7BE",
                "Fourth": "#548687",
-              "Contact": "#FFCE79"}
+              "Contact": "#FFCE79"
+                  }
+
+sectionText = {
+              "Bio": "Currently studying at Makers Academy, Europe's leading webdev bootcamp. Fascinated by the wide world of web development, from front end to back end.",
+         "Projects": "Here is a list of things from my github look how cool they are",
+            "About": "#BAC7BE",
+           "Fourth": "#548687",
+          "Contact": "#FFCE79"
+
+}
 
 function displayNav(){
   expandNavSections('Bio')
@@ -11,6 +22,8 @@ function displayNav(){
   expandNavSections('Fourth')
   expandNavSections('Contact')
   $(".header-box").html("Nav")
+  $("#Bio-title").html("<h3>Bio</h3>")
+  $("#arrow").css({opacity: 0})
   fixbottomborder()
 }
 
@@ -18,14 +31,16 @@ function displaySection(box){
   collapseSelection(box)
   $(`#${box}`).animate({height:'100%'})
   $(`#${box}`).css({
-     "border-bottom-right-radius" : "2vmin",
-     "border-bottom-left-radius" : "2vmin"
+     "border-bottom-right-radius": "2vmin",
+      "border-bottom-left-radius": "2vmin",
+                        "padding": "2vmin"
   });
   if (box === "About") {
     $(`#header-box`).html(`${box} Me`)
   } else {
     $(`#header-box`).html(`${box}`)
   }
+  sectionInnerText(box)
   removeHover(box)
   // changeSectionClick(id)
 }
@@ -60,24 +75,32 @@ function expandNavSections(box){
     height: "20%",
     opacity: 1,
   })
-  $(`#${box}`).css({"border-top-width" : "0.6vmin"})
+  $(`#${box}`).css({
+    "border-top-width" : "0.6vmin",
+              "padding": "0vmin"
+  })
+  $(`#${box}-title`).animate({opacity: 1})
+  $(`#${box}-text`).empty()
   addHover(box)
 }
 
 function addHover(box){
   $(`#${box}`).mouseover(function() {
     $(this).css({"background-color": "white"});
-    $(`#${box}-text`).css({"color": `${sectionColours[box]}`})
-    $(`#${box}-text`).animate({
-      "opacity": 1
-    })
+    $(`#${box}-title`).css({"color": `${sectionColours[box]}`})
   }).mouseleave(function() {
      $(this).css({"background-color" : sectionColours[`${box}`]})
-     $(`#${box}-text`).css({"opacity": 0})
+     $(`#${box}-title`).css({"color": "white"})
    });
 }
 
 function removeHover(box){
   $(`#${box}`).unbind('mouseover')
   $(`#${box}`).css({"backgroundColor": `${sectionColours[box]}`})
+  $(`#${box}-title`).css({opacity: 0})
+}
+
+function sectionInnerText(box){
+  $(`#${box}-text`).html(sectionText[`${box}`])
+  $(`#${box}-text`).animate({opacity: 1})
 }
