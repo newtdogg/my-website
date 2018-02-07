@@ -1,28 +1,27 @@
 sectionColours = {
-                  "Bio": "#D0CD94",
-             "Projects": "#B0413E",
-                "About": "#BAC7BE",
-               "Fourth": "#548687",
-              "Contact": "#FFCE79"
+                  "About": "#E39F41",
+             "Projects": "#5C6FAA",
+                "Blog": "#D05C8D",
+               "Fourth": "#00A07E",
+              "Contact": "#C591B8"
                   }
 
 sectionText = {
-              "Bio": "Currently studying at Makers Academy, Europe's leading webdev bootcamp. Fascinated by the wide world of web development, from front end to back end.",
+              "About": "Currently studying at Makers Academy, Europe's leading webdev bootcamp. Fascinated by the wide world of web development, from front end to back end.",
          "Projects": "Here is a list of things from my github look how cool they are",
-            "About": "#BAC7BE",
+            "Blog": "#BAC7BE",
            "Fourth": "#548687",
           "Contact": "#FFCE79"
-
 }
 
 function displayNav(){
-  expandNavSections('Bio')
-  expandNavSections('Projects')
   expandNavSections('About')
+  expandNavSections('Projects')
+  expandNavSections('Blog')
   expandNavSections('Fourth')
   expandNavSections('Contact')
   $(".header-box").html("Nav")
-  $("#Bio-title").html("<h3>Bio</h3>")
+  $("#About-title").html("<h3>About</h3>")
   $("#arrow").css({opacity: 0})
   fixbottomborder()
 }
@@ -33,7 +32,10 @@ function displaySection(box){
   $(`#${box}`).css({
      "border-bottom-right-radius": "2vmin",
       "border-bottom-left-radius": "2vmin",
-                        "padding": "2vmin"
+                        "padding": "2vmin",
+                "backgroundColor": `${sectionColours[box]}`,
+                        "opacity": "0.7"
+
   });
   if (box === "About") {
     $(`#header-box`).html(`${box} Me`)
@@ -46,7 +48,7 @@ function displaySection(box){
 }
 
 function collapseSelection(box){
-  var boxes = ["Bio", "Projects", "About", "Fourth", "Contact"]
+  var boxes = ["About", "Projects", "Blog", "Fourth", "Contact"]
   boxes.forEach(function(boxId){
     if(boxId != box){
       $(`#${boxId}`).animate({
@@ -55,13 +57,12 @@ function collapseSelection(box){
       })
       $(`#${boxId}`).css({"border-top-width" : "0"})
     }
-
     fixbottomborder()
   })
 }
 
 function fixbottomborder(){
-  var boxes = ["Bio", "Projects", "About", "Fourth"]
+  var boxes = ["About", "Projects", "Blog", "Fourth"]
   boxes.forEach(function(boxId){
     $(`#${boxId}`).css({
        "border-bottom-right-radius" : "0",
@@ -96,7 +97,6 @@ function addHover(box){
 
 function removeHover(box){
   $(`#${box}`).unbind('mouseover')
-  $(`#${box}`).css({"backgroundColor": `${sectionColours[box]}`})
   $(`#${box}-title`).css({opacity: 0})
 }
 

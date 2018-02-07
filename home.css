@@ -1,6 +1,10 @@
 .jumbotron {
-  background-color: #241623;
+  background-color: #121412;
   padding: 4vmin;
+}
+
+.jumbotron .col-sm-8 {
+  padding: 0px
 }
 
 .title {
@@ -27,7 +31,7 @@
   border-right-color: white;
   border-right-style: solid;
   border-right-width: 0.2vmin;
-  background-color: #241623;
+  background-color: #121412;
   border-top-left-radius: 2vmin;
 
   /*margin: 5px;*/
@@ -38,7 +42,7 @@
   height: 7vmin;
   display: inline-block;
   border-top-right-radius: 2vmin;
-  background-color: #241623;
+  background-color: #121412;
   float: right;
 }
 
@@ -81,23 +85,23 @@
   border-top-color: white;
   border-top-style: solid;
   border-top-width: 0.6vmin;
-  background-color: #B0413E;
+  background-color: #5C6FAA;
 }
 
-.aboutMe-box{
+.blog-box{
   width: 100%;
   height: 0;
   opacity: 0;
   border-top-color: white;
   border-top-style: solid;
   border-top-width: 0.6vmin;
-  background-color: #BAC7BE;
+  background-color: #D05C8D;
 }
 
 .contact-box{
   width: 100%;
   height: 0;
-  background-color: #FFCE79;
+  background-color: #C591B8;
   opacity: 0;
   border-top-color: white;
   border-top-style: solid;
@@ -113,17 +117,17 @@
   border-top-color: white;
   border-top-style: solid;
   border-top-width: 0.6vmin;
-  background-color: #548687;
+  background-color: #00A07E;
 }
 
 .navCol {
   padding: 0px;
 }
 
-.bio-box {
+.about-box {
   width: 100%;
   height: 100%;
-  background-color: #D0CD94;
+  background-color: #E39F41;
   border-top-color: white;
   border-top-style: solid;
   border-top-width: 0.6vmin;
