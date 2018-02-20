@@ -140,6 +140,22 @@
   border-bottom-left-radius: 2vmin;
 }
 
+.about-box > div > div > p {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+
+}
+
+.intro {
+  font-size: 20px;
+  font-weight: 380;
+}
+
+.intro2 {
+  font-weight: 450;
+}
+
 .navGrid {
   max-width: 100%;
   max-height: 100%;
@@ -177,8 +193,10 @@
   color: white;
 }
 
-.contactBody a{
+.main-box > div > div > div > p > a{
   color: white;
+  font-size: 18px;
+  font-weight: 420;
 }
 
 .contactBody a:hover{
