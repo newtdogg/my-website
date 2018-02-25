@@ -22,7 +22,7 @@ sectionText = {
          <div><p><a href='https://github.com/newtdogg/Makers-BnB'>EZsleep</a> </p> <div> \
          <div><p> A website designed to emulate airBnB, front end and back end written in JavaScript, using nodeJs, expressJS, tested using mocha</p></div> ",
             "Blog": "<div class='intro'>My Blog is currently under construction, however here is a blog I wrote during the two weeks of the final project at Makers:</div><div></div><div><p class='contactBody'><a href='https://pokerprogressioninjava.wordpress.com/'>Poker Progression in Java</a></p></div>",
-           "Hobbies": "Skiing, Football, Video Games, other things",
+           "Hobbies": "Skiing, Football, Video Games, technically programming while it's not yet a career",
           "Contact": "<div><p class='contactTitle'>EMAIL:</p> <p><a>edwardfrancisnewton@live.com</a></p></div> \
           <div><p class='contactTitle'>GITHUB:</p> <p><a href='https://github.com/newtdogg/'>github.com/newtdogg</a></p></div>\
           <div><p class='contactTitle'>LINKEDIN:</p> <p><a href='https://www.linkedin.com/in/edwardfrancisnewton/'>www.linkedin.com/in/edwardfrancisnewton</a></p></div>"
